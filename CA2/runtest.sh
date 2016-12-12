@@ -6,7 +6,7 @@ FILE="CPUdata.txt";
 OUTFILE="results.dat";
 
 # prints the heading of the results.dat with 8 spaces between in caption
-printf "%-8s %-8s %-8s %-8s" """C0" "N" "IDLE" > $OUTFILE;
+printf "%-8s %-8s %-8s" "C0" "N" "IDLE" > $OUTFILE;
 
 for i in {1..50}
 do
@@ -36,7 +36,7 @@ do
     	echo "AVG CPU Idle $CPUAverage %";
 
  	# Appending to results.dat ensuting that there is 8 spaces between each component
-	printf "\n%-8s %-8s %-8s %-8s" """$transactions"  "$i"  "$CPUAverage" >> $OUTFILE
+	printf "\%-8s %-8s %-8s" "$transactions"  "$i"  "$CPUAverage" >> $OUTFILE
   
 done
 
