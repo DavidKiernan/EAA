@@ -2,7 +2,7 @@
 
 # Done to make changes to the files easier to maintain
 SYNTHF="synthetic.dat";
-FILE="CPUdata.txt";
+TEMPFILE="CPUdata.txt";
 OUTFILE="results.dat";
 
 # prints the heading of the results.dat with 8 spaces between in caption
@@ -22,7 +22,7 @@ do
 	# That the loadtest is running and write it to CPUdata file which is overwritten for every iteration
 
 	echo "Running MPSTAT";
-	mpstat -P 0 1 10  > $FILE
+	mpstat -P 0 1 10  > $TEMPFILE
 	
 	 #Calculate Co by taking the number of lines within synthetic.dat
 
@@ -32,7 +32,7 @@ do
 	#Get avg idle as mpstat is taking a "picture" of cpu idle time every second need for duration
 	# of loadtest so need to avgerage it from CPUdata file .
 
-    	CPUAverage=`awk '/Average/ {print $12}' $FILE`
+    	CPUAverage=`awk '/Average/ {print $12}' $TEMPFILE`
     	echo "AVG CPU Idle $CPUAverage %";
 
  	# Appending to results.dat ensuting that there is 8 spaces between each component
