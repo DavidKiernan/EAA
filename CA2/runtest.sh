@@ -36,7 +36,7 @@ do
     	echo "AVG CPU Idle $CPUAverage %";
 
  	# Appending to results.dat ensuting that there is 8 spaces between each component
-	printf "\%-8s %-8s %-8s" "$transactions"  "$i"  "$CPUAverage" >> $OUTFILE
+	printf "\n%-8s %-8s %-8s" "$transactions"  "$i"  "$CPUAverage" >> $OUTFILE
   
 done
 
