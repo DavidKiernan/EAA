@@ -42,8 +42,8 @@ plot(ConcurrentUsers,CPUBusy(CPUIdle),type="l", xlab="N (No. Concurrent Users)",
 # Closes the png file.
 dev.off()
 
-#Creating the Throughput X0 = C0 / Time
-Throughput <- Transactions / Time
+ 
+
 # showing the Throughput Data 
 print(Throughput)
 
